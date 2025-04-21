@@ -14,3 +14,6 @@ class Cokgen:
 
 ucgen = Cokgen("Üçgen",3)
 ucgen.bilgi()
+
+
+
