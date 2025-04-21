@@ -9,8 +9,8 @@ class Cokgen:
         print("#"*30)
         print("Adı:",self.adi)
         print("Kenar Sayısı:",self.kenarSay)
-        print("Açı Toplam:",self.aciToplam)
+        print("Açı Toplam: 😁👍",self.aciToplam)
         print("#"*30)
 
 ucgen = Cokgen("Üçgen",3)
-ucgen.bilgi()
+ucgen.bilgi(),
