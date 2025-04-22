@@ -6,6 +6,7 @@
 
 from pathlib import Path
 
-with open ("ornek.csv","r+") as d1:
-d2 = "".join(list(d1).remove(";"))
-
+BASE_DIR = Path(__file__).resolve().parent.parent.parent / 'baris'
+print(BASE_DIR)
+d1 = open("/workspace/DVA_Python2104/baris/ornek.csv","r+")
+#d2 = "".join(list(d1).remove(";"))

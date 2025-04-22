@@ -8,6 +8,16 @@
 # yukarıda dosyalardan yola çıkarak d1 dosyası içerisinde yer alan
 # ilk bölümdeki kayıttan noktalama işaretlerini temizleyelim.temiz kaydı d2 dosyasına kaydedelim.
 
+import string
 
-dosya1 = open(r"Egzersizler/alperen/ornek.csv","+r")
-for i in range(len)
+with open("Egzersizler/alperen/ornek.csv", "r") as dosya:
+    satirs = dosya.readlines()
+
+temiz = []
+
+for satir in satirs:
+    temizsatir = ''.join(char for char in satir if char not in string.punctuation)
+    temiz.append(temizsatir)
+
+with open("Egzersizler/alperen/ornek2.csv", "w") as dosya:
+    dosya.writelines(temiz)
