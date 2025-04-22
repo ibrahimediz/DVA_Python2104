@@ -18,11 +18,12 @@ print(BASE_DIR)
 # a+
 # w+
 # x+
-
+noktalama = list(str(punctuation))
+noktalama.remove(";")
 dosya = open(r"Dokumanlar/FileOperations/ornek.csv","w+")
 for i in range(100):
     liste = []
-    kayit = [random.choice(random.choice([ascii_letters,punctuation,digits])) for i in range(20)]
+    kayit = [random.choice(random.choice([ascii_letters,noktalama,digits])) for i in range(20)]
     kayit = "".join(kayit)
     liste.append(kayit)
     liste.append(random.randint(1,100000))
