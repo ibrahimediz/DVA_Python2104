@@ -1,6 +1,6 @@
 import os
 import csv
-import pathlib
+from pathlib import Path
 
 
 print(pathlib.posixpath.abspath("."))
