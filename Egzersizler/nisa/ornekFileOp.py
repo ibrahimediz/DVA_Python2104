@@ -4,6 +4,8 @@
 
 import csv
 import re
+
+
 from string import punctuation
 liste = []
 with open("Egzersizler/nisa/ornek.csv", "r+") as d1:
