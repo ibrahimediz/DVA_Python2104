@@ -3,7 +3,7 @@ liste = ['Ibrahim', 'mss', 'eren', 'nisa', 'ilker',
  'onur', 'ahmet', 'sultan', 'sefa', 'Sena', 'baris',
   'efe', 'furkanunsal', 'furkan_topaloglu', 'alperen', 'Gkhan',"ogun"]
 dosyaismi = "ornek2.py"
-sorumetni = """
+sorumex"tni = """
 # ekrana yansıtılan diagram dosyasında yer alan 
 # sınıf isimlerini kullanarak hiyerarşiyi oluşturalım
 """

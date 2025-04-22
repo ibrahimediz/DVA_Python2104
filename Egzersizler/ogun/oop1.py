@@ -1,3 +1,5 @@
+import pathlib
+pathlib.
 class Cokgen:
     def __init__(self,adi,kenarSayisi):
         self.adi = adi
