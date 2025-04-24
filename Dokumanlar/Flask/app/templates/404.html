@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Sayfa Bulunamadu0131{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2 text-center">
+        <h1 class="display-1">404</h1>
+        <h2 class="mb-4">Sayfa Bulunamadu0131</h2>
+        <p class="lead">Aradığınız sayfa bulunamadı veya kaldırılmış olabilir.</p>
+        <a href="{{ url_for('web.index') }}" class="btn btn-primary mt-3">Ana Sayfaya Dön</a>
+    </div>
+</div>
+{% endblock %}

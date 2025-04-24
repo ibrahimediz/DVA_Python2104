@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}{{ book.title }} Düzenle{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Kitap Düzenle</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Başlık</label>
+                        <input type="text" class="form-control" id="title" name="title" value="{{ book.title }}" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="author" class="form-label">Yazar</label>
+                        <input type="text" class="form-control" id="author" name="author" value="{{ book.author }}" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Açıklama</label>
+                        <textarea class="form-control" id="description" name="description" rows="4">{{ book.description }}</textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Fiyat</label>
+                        <input type="number" step="0.01" class="form-control" id="price" name="price" value="{{ book.price }}" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="publication_date" class="form-label">Yayın Tarihi</label>
+                        <input type="date" class="form-control" id="publication_date" name="publication_date" value="{{ book.publication_date }}">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Güncelle</button>
+                    <a href="{{ url_for('web.view_book', book_id=book.id) }}" class="btn btn-secondary">İptal</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

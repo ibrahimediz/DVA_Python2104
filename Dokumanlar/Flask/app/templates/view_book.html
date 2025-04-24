@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">{{ book.title }}</h2>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <h5>Yazar</h5>
+                    <p>{{ book.author }}</p>
+                </div>
+                
+                {% if book.description %}
+                <div class="mb-3">
+                    <h5>Au00e7u0131klama</h5>
+                    <p>{{ book.description }}</p>
+                </div>
+                {% endif %}
+                
+                <div class="mb-3">
+                    <h5>Fiyat</h5>
+                    <p>{{ book.price }} TL</p>
+                </div>
+                
+                {% if book.publication_date %}
+                <div class="mb-3">
+                    <h5>Yayu0131n Tarihi</h5>
+                    <p>{{ book.publication_date }}</p>
+                </div>
+                {% endif %}
+                
+                <div class="mb-3">
+                    <h5>Eklenme Tarihi</h5>
+                    <p>{{ book.created_at }}</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-between">
+                    <a href="{{ url_for('web.index') }}" class="btn btn-secondary">Geri Du00f6n</a>
+                    <div>
+                        <a href="{{ url_for('web.edit_book', book_id=book.id) }}" class="btn btn-primary">Du00fczenle</a>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Sil</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Silme Onay Modalı -->
+            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteModalLabel">Kitabı Sil</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>"{{ book.title }}" kitabını silmek istediğinizden emin misiniz?</p>
+                            <p class="text-danger">Bu işlem geri alınamaz!</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                            <form action="{{ url_for('web.delete_book', book_id=book.id) }}" method="POST" style="display: inline;">
+                                <button type="submit" class="btn btn-danger">Evet, Sil</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+/* Ana stil dosyasu0131 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    font-weight: 600;
+}
+
+footer {
+    border-top: 1px solid #e9ecef;
+    margin-top: 2rem;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+}

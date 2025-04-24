@@ -1,0 +1,81 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Anlatım",
+    "collectionId": "2486686f-2aed-44fd-bf2b-e93920018ea2",
+    "dateExported": "2025-04-23T17:42:02.539Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "2af30a68-f663-49bf-afa6-5d7df459db4a",
+            "colId": "2486686f-2aed-44fd-bf2b-e93920018ea2",
+            "containerId": "",
+            "name": "Tüm Kitapları Listeleme",
+            "url": "http://localhost:5000/api/books",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2025-04-23T17:38:05.855Z",
+            "modified": "2025-04-23T17:38:05.855Z",
+            "headers": []
+        },
+        {
+            "_id": "e3aeac3c-1c76-4480-9030-71eea051d794",
+            "colId": "2486686f-2aed-44fd-bf2b-e93920018ea2",
+            "containerId": "",
+            "name": "Tek kitap getir",
+            "url": "http://localhost:5000/api/books/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-04-23T17:39:02.549Z",
+            "modified": "2025-04-23T17:39:02.549Z",
+            "headers": []
+        },
+        {
+            "_id": "9f33fc46-b4c2-4ea7-bf77-a632ae74eb40",
+            "colId": "2486686f-2aed-44fd-bf2b-e93920018ea2",
+            "containerId": "",
+            "name": "Kitap Ekleme",
+            "url": "http://localhost:5000/api/books",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-04-23T17:40:06.880Z",
+            "modified": "2025-04-23T17:40:06.880Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Yeni Kitap\",\n  \"author\": \"Yeni Yazar\",\n  \"description\": \"Bu yeni bir kitaptır\",\n  \"price\": 39.99,\n  \"publication_date\": \"2023-06-15\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "c124aff7-d363-4cd0-a46b-ba7b5361bc23",
+            "colId": "2486686f-2aed-44fd-bf2b-e93920018ea2",
+            "containerId": "",
+            "name": "Kitap Güncelle",
+            "url": "http://localhost:5000/api/books/2",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2025-04-23T17:41:03.683Z",
+            "modified": "2025-04-23T17:41:03.683Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Güncellenmiş Kitap Adı\",\n  \"price\": 49.99\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d9afabf1-891e-4832-9f5f-e0f8eab5cc81",
+            "colId": "2486686f-2aed-44fd-bf2b-e93920018ea2",
+            "containerId": "",
+            "name": "Kitap Silme",
+            "url": "http://localhost:5000/api/books/1",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2025-04-23T17:41:41.101Z",
+            "modified": "2025-04-23T17:41:41.101Z",
+            "headers": []
+        }
+    ],
+    "ref": "OdBtwWvk78x8yBHbVLawnCUFgWiOYehX3IRNHzlurVtX5MjlS9UEnfP_g9HxgYvGSh8Lly8RJvWeKeVzXhy0mg"
+}

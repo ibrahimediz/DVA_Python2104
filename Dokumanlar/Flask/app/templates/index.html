@@ -1,13 +1,79 @@
-<html>
-    <head>
-        {% if title %}
-        <title>{{title}} -Başlık</title>
-        {% else %}
-        <title> Hoşgeldiniz</title>
-        {% endif %}
-    </head>
-    <body>
+{% extends "base.html" %}
+
+{% block title %}Ana Sayfa - Kitap Listesi{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Kitap Listesi</h1>
+            <a href="{{ url_for('web.new_book') }}" class="btn btn-primary">Yeni Kitap Ekle</a>
+        </div>
         
-        {{username}}
-    </body>
-</html>
+        <div class="alert alert-info">
+            Aktif Veritabanu0131: <strong>{{ db_type.upper() }}</strong>
+        </div>
+        
+        {% if books %}
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Bau015flu0131k</th>
+                            <th>Yazar</th>
+                            <th>Fiyat</th>
+                            <th>Yayu0131n Tarihi</th>
+                            <th>u0130u015flemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for book in books %}
+                            <tr>
+                                <td>{{ book.id }}</td>
+                                <td>{{ book.title }}</td>
+                                <td>{{ book.author }}</td>
+                                <td>{{ book.price }} TL</td>
+                                <td>{{ book.publication_date }}</td>
+                                <td>
+                                    <a href="{{ url_for('web.view_book', book_id=book.id) }}" class="btn btn-sm btn-info">Gu00f6ru00fcntu00fcle</a>
+                                    <a href="{{ url_for('web.edit_book', book_id=book.id) }}" class="btn btn-sm btn-primary">Du00fczenle</a>
+                                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ book.id }}">Sil</button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-warning">
+                Henu00fcz kayu0131tlu0131 kitap bulunmamaktadu0131r.
+            </div>
+        {% endif %}
+        
+        <!-- Silme Onay Modalları -->
+        {% for book in books %}
+        <div class="modal fade" id="deleteModal{{ book.id }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ book.id }}" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteModalLabel{{ book.id }}">Kitabı Sil</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>"{{ book.title }}" kitabını silmek istediğinizden emin misiniz?</p>
+                        <p class="text-danger">Bu işlem geri alınamaz!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                        <form action="{{ url_for('web.delete_book', book_id=book.id) }}" method="POST" style="display: inline;">
+                            <button type="submit" class="btn btn-danger">Evet, Sil</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
