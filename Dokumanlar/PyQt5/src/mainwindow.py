@@ -1,7 +1,7 @@
 from PyQt5 import QtWidgets,uic
 from PyQt5.QtWidgets import QMessageBox
 
-class MainWindow(QtWidgets.QMainWindow):
+class Eski(QtWidgets.QMainWindow):
     def __init__(self):
         super(MainWindow,self).__init__()
         uic.loadUi("ui/arayuz.ui",self)
